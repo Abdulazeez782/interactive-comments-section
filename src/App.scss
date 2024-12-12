@@ -1,0 +1,136 @@
+@import './assets/styles/variable.scss';
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Rubik", sans-serif;
+}
+
+.modal {
+    background: black;
+    opacity: 0.5;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    display: none;
+}
+
+.modal.block {
+    display: block;
+}
+
+button {
+    cursor: pointer;    
+}
+
+img {
+    cursor: pointer;
+}
+
+.margin {
+    margin-right: 10px;
+}
+
+.border {
+    border-radius: 5px;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+body {
+    background: $Light-gray;
+}
+
+main {
+    margin: 20px auto;
+    width: 60%;
+}
+
+.comments {
+    background: $White;
+    padding: 20px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 15px;     
+    clear: both; 
+}
+
+.reply {
+    width: 85%;
+    float: right;
+}
+
+.user-reply-container {
+    clear: both;
+    position: relative;
+}
+
+.reply-container {
+    position: relative;
+}
+
+.reply-comment-container {
+    width: 85%;
+    display: block;
+    float: right;
+    clear: both;
+    position: relative;
+}
+
+.delete-comment-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: $White;
+    width: 35%;
+    padding: 25px;
+    z-index: 2;
+    display: none;
+}
+
+.delete-comment-container.block {
+    display: block;
+}
+
+@media screen and (max-width: 860px) {
+    main {
+        width: 70%;
+    }
+
+    .reply {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    main {
+        width: 85%;
+    }
+
+    .reply {
+        width: 95%;
+    }
+    
+    .delete-comment-container {
+        width: 85%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .comments {
+        position: relative;
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
+}
+
+

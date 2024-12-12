@@ -1,0 +1,125 @@
+@import './variable.scss';
+
+
+#delete-comment {
+    color: $Soft-Red;
+}
+
+.comment-section {
+    margin-left: 20px;
+    width: 100%;
+
+    > div:first-child {
+        margin-bottom: 10px;
+    }
+
+    > .flex {
+        justify-content: space-between;
+    }    
+
+    .comment-info {
+        margin-right: 10px;
+
+        h4 {
+            color: $Moderate-blue;
+            font-size: .8rem;
+        }
+
+        span {
+            background: $Moderate-blue;
+            color: $White;
+            padding: 2px 5px;
+            font-size: .6rem;
+            margin-right: 12px;     
+            display: none;       
+        }
+
+        span.you {
+            display: inline-block;
+        }
+
+        p {
+            color: $Dark-blue;
+            font-weight: 400;
+            font-size: .8rem;
+        }
+
+        .avatar {
+            width: 25px;
+        }
+    } 
+    
+    .comment-edit {       
+
+        > div {
+            display: none;
+        }
+
+        > div.block {
+            display: block;
+        }
+
+        button {
+            background: transparent;
+            border: none; 
+            &:hover {
+                h4, .icon-reply path, .icon-edit path {
+                    color: hsl(237, 18%, 74%);
+                    fill: hsl(237, 18%, 74%);
+                }
+                #delete-comment, .icon-delete path {
+                    fill: hsl(358, 22%, 74%);
+                    color: hsl(358, 22%, 74%);
+                }
+            }           
+        }        
+
+        h4 {
+            color: $Moderate-blue;
+            font-size: .9rem;
+            display: inline;
+        }
+    }
+
+    .comment-made {
+        p {
+            color: $Dark-blue;
+            font-size: .9rem;
+            line-height: 1.5;
+
+            span.reply-name {
+                color: $Moderate-blue;
+                font-weight: 700;
+                display: inline-block;
+                padding-right: 5px;
+            }
+        }
+
+        p.none {
+            display: none;
+        }
+
+        .edit-comment {
+            display: none;
+        }
+
+        .edit-comment.block {
+            display: block;
+        }
+    }
+}
+
+@media screen and (max-width: 550px) {
+        .comment-section {
+            margin-left: 0px;
+        }
+        .comment-edit {
+            position: absolute;
+            right: 2%;
+            bottom: 12%;
+            flex-wrap: wrap;
+        }
+        p, h4 {
+            font-size: .7rem !important;
+        }    
+}

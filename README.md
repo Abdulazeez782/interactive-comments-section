@@ -1,70 +1,85 @@
-# Getting Started with Create React App
+# Frontend Mentor - Interactive comments section solution
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a solution to the [Interactive comments section challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/interactive-comments-section-iG1RugEG9). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-## Available Scripts
+## Table of contents
 
-In the project directory, you can run:
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Overview
+This is my solution to this interactive comments section challenge, i was able to get the design looking closely as possible and at the same time making it responsive for all screen sizes. I used the popular ReactJs library coupled with my deep knowledge of html and css. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The challenge is basically a typical comments section that allows a user to type in comments, of course edit and delete previous comments and users can also reply to comments made by other users as well. The challenge is as challenging as possible, every step of the development process poses new challenge that allows me to think deep and wide and also make research on solving each problem as they presents themselves. 
 
-### `npm test`
+### The challenge
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Users should be able to:
 
-### `npm run build`
+- View the optimal layout for the app depending on their device's screen size
+- See hover states for all interactive elements on the page
+- Create, Read, Update, and Delete comments and replies
+- Upvote and downvote comments
+- **Bonus**: save the current state in the browser that persists when the browser is refreshed.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Links
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## My process
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Built with
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- [React](https://reactjs.org/) - JS library
+- [Sass](https://sass-lang.com/) - Css Preprocessor
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### What I learned
+- I learned to use the javascript local storage to store comments so it persists even when the browser is refreshed. Using the block of code below, i was able to set the comments with the key "COMMENTS" 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```Javascript
+  useEffect(() => {
+    localStorage.setItem("COMMENTS", JSON.stringify(comments));
+  }, [comments])
+ ``` 
+And using the block of code below, I was able to get the comments from local storage to display for the user
 
-## Learn More
+```Javascript
+const [comments, setComments] = useState((commentsInfo) => {
+    const localValue = localStorage.getItem("COMMENTS");
+    if(localValue == null) return [];
+    return JSON.parse(localValue);
+  });
+```
+- I also learned to import svg icons directly into my react components for convenient styling. 
+```Javascript
+    import {ReactComponent as IconReply} from '../../assets/images/icon-reply.svg'    
+```
+After importing the icons like that, i could easily change the color for the hover and active states using the css fill attribute.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Continued development
+for future developments, i would like to create a profile section for each user that displays basic information about the user once their name or profile picture is clicked.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Useful resources
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+## Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Fullname - [Oludare Abdulazeez Ajadi]
+- Frontend Mentor - [@Abdulazeez782](https://www.frontendmentor.io/profile/Abdulazeez782)
+- Twitter - [@ajadii_](https://x.com/ajadii_)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

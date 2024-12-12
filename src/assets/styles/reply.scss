@@ -1,0 +1,50 @@
+@import './variable.scss';
+
+.user-reply {
+    background: $White;
+    padding: 15px 20px;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: -5px 0px 15px 0px;
+    position: relative;
+
+    img {
+        width: 25px;
+    }
+
+    textarea {
+        width: 80%;
+        padding: 10px 15px;
+    }
+
+    button {
+        background-color: $Moderate-blue;
+        color: white;
+        padding: 5px 15px;
+        border: none;
+
+        &:hover {
+            background: hsl(238, 32%, 64%);
+        }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .user-reply {        
+        min-height: 8rem;
+
+        img, button {
+            position: absolute;
+            bottom: 10px;
+        }
+
+        textarea {
+            width: 100%;
+            margin-right: 0px;
+        }
+
+        button {
+            right: 20px;
+        }
+    }
+}

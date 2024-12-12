@@ -1,0 +1,42 @@
+@import './variable.scss';
+
+.count {
+    background: $Very-light-gray;
+    width: 20px;
+    height: 70px;
+    flex-direction: column;
+    justify-content: space-between;   
+    padding: 0px 15px;
+    border-radius: 7px;
+
+    p {
+        color: $Moderate-blue;
+        font-size: .8rem;
+        font-weight: 700;
+    }
+
+    button {
+        background: transparent;
+        font-weight: 700;
+        font-size: 1rem;
+        color: $Light-grayish-blue;
+
+        &:hover {
+            color: $Moderate-blue;
+        }
+    }
+
+    .active {
+        color: $Moderate-blue;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .count {
+        flex-direction: row;
+        width: 80px;
+        height: 30px;
+        padding: 0px;
+        margin-top: 10px;
+    }
+}
