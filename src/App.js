@@ -6,9 +6,9 @@ import { formatDistanceToNow } from 'date-fns';
 
 function App() {
   const commentsInfo = commentsData.comments;
-  const [comments, setComments] = useState((commentsInfo) => {
+  const [comments, setComments] = useState(() => {
     const localValue = localStorage.getItem("COMMENTS");
-    if(localValue == null) return [];
+    if(localValue == null) return commentsInfo;
     return JSON.parse(localValue);
   });
   const [newComment, setNewComment] = useState();
